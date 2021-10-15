@@ -62,6 +62,9 @@ public class Enroll {
     @Value("${fabric.contractName}")
     private String contractName;
 
+    @Value("${fabric.service.discovery.asLocalhost}")
+    private String asLocalhost;
+
     @Autowired
     private BlockService blockService;
 
@@ -216,6 +219,10 @@ public class Enroll {
             e.printStackTrace();
             adminOperationRespository.getGateway().close();
         }
+    }
+
+    public String asLocalHost() {
+        return asLocalhost;
     }
 
 }

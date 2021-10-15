@@ -15,7 +15,7 @@ public class FtcApplication {
 
     @PostConstruct
     public void init() throws Exception {
-        System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
+        System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", e.asLocalHost());
 //        e.doEnroll();
         e.setConnection();
     }
