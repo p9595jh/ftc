@@ -1,0 +1,57 @@
+logging:
+  level:
+    com.themedium: DEBUG
+    org.springframework.security: INFO
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: INFO
+
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate.ddl-auto: create
+    properties.hibernate.format-sql: false
+  #    properties.hibernate.jdbc.lob.non_contextual_creation: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/themedium?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: root
+    password: 123123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql-script-encoding: UTF-8
+    initialization-mode: always
+
+#themedium:
+#  chainId: ${CHAIN_ID:18}
+#  minimumBalance: ${MINIMUM_BALANCE:50000}
+#  batch:
+#    isUse: true
+#    schedule:
+#      cron: ${BATCH_SCHEDULE:10/20 * * * * *} #every 10,30,50 second
+#    size:
+#      maxTx: ${BATCH_SCHEDULE_SIZE:1000}
+
+fabric:
+  wallet:
+    path: "wallet"
+  service:
+    discovery:
+      asLocalhost: true
+  networkName: "mychannel"
+  contractName: "themedium"
+  network:
+    configPath: "/Users/medium/Desktop/PJH/blockchain/Example3/network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml"
+  ca:
+    url: "https://localhost:7054"
+    admin:
+      user: "admin"
+      secret: "adminpw"
+      mspId: "Org1MSP"
+      pemPath: "/Users/medium/Desktop/PJH/blockchain/Example3/network/organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem"
+    appUser:
+      id: "appUser"
+      affiliation: "org1.department1"
+      pemPath: "/Users/medium/Desktop/PJH/blockchain/Example3/network/organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem"
+
